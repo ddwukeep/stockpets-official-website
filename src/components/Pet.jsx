@@ -1,4 +1,4 @@
-import nvdaPetHero from '../nvda-pet-hero.png'
+import nvdaPetHero from '../nvda-pet-hero.png.png'
 
 export default function Pet({ reaction }) {
   return <div className={`pet-wrap nvda-pet ${reaction ? 'pet-tapped' : ''}`}>
