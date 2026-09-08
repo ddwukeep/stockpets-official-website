@@ -31,10 +31,6 @@ export default function StockPetsFAQ() {
     <div className="faq-ticker-watermark" aria-hidden="true">NVDA · TSLA · AAPL</div>
     <div className="faq-inner">
       <div className="market-snapshot">
-        <header className="snapshot-header">
-          <span>Market snapshot</span>
-          <small>Demo data</small>
-        </header>
         <div className="snapshot-list">
           {marketSnapshot.map(([ticker, name, price, change]) => <article className="snapshot-card" key={ticker}>
             <div className="snapshot-symbol"><b>{ticker}</b><small>{name}</small></div>
@@ -45,9 +41,7 @@ export default function StockPetsFAQ() {
       </div>
 
       <header className="faq-intro">
-        <span>Understanding StockPets</span>
-        <h2 id="faq-title">The short<br/><em>answers.</em></h2>
-        <p>Stocks, pets, memes and ownership — explained simply.</p>
+        <h2 id="faq-title">The short <em>answers.</em></h2>
       </header>
 
       <div className="faq-list">
@@ -55,7 +49,7 @@ export default function StockPetsFAQ() {
           const isOpen = openItem === index
           const answerId = `faq-answer-${index + 1}`
           return <article className={`faq-item${isOpen ? ' is-open' : ''}`} key={question}>
-            <button type="button" aria-expanded={isOpen} aria-controls={answerId} onClick={() => setOpenItem(index)}>
+            <button type="button" aria-expanded={isOpen} aria-controls={answerId} onClick={() => setOpenItem(openItem === index ? null : index)}>
               <span className="faq-number">{String(index + 1).padStart(2, '0')}</span>
               <span className="faq-question">{question}</span>
               <span className="faq-toggle" aria-hidden="true">{isOpen ? '−' : '+'}</span>
