@@ -1,3 +1,5 @@
+import tslaCarePet from '../assets/tsla-care-pet.png'
+
 const actions = [
   {
     name: 'Feed',
@@ -22,5 +24,5 @@ const actions = [
 ]
 
 export default function CareSection() {
-  return <section className="care-section" aria-labelledby="care-title"><div className="care-inner"><header className="care-heading"><span>How to play</span><h2 id="care-title">Care for your <em>StockPet</em></h2><p>Simple daily actions. A happier StockPet.<br/>Grow together, step by step.</p></header><div className="care-scene"><div className="care-pet"><div className="care-halo" aria-hidden="true"/><img src="/src/assets/tsla-care-pet.png" alt="TSLA StockPet relaxing at home"/></div><div className="care-actions">{actions.map(({ name, description, icon }, index) => <article className="care-action" key={name}><span className="care-action-number">0{index + 1}</span><svg viewBox="0 0 24 24" aria-hidden="true">{icon}</svg><div><h3>{name}</h3><p>{description}</p></div></article>)}</div></div><footer className="care-closing"><strong>Raise <i>·</i> Bond <i>·</i> Evolve</strong><span>More happy days together.</span></footer></div></section>
+  return <section className="care-section" aria-labelledby="care-title"><div className="care-inner"><header className="care-heading"><span>How to play</span><h2 id="care-title">Care for your <em>StockPet</em></h2><p>Simple daily actions. A happier StockPet.<br/>Grow together, step by step.</p></header><div className="care-scene"><div className="care-pet"><div className="care-halo" aria-hidden="true"/><img src={tslaCarePet} alt="TSLA StockPet relaxing at home"/></div><div className="care-actions">{actions.map(({ name, description, icon }, index) => <article className="care-action" key={name}><span className="care-action-number">0{index + 1}</span><svg viewBox="0 0 24 24" aria-hidden="true">{icon}</svg><div><h3>{name}</h3><p>{description}</p></div></article>)}</div></div><footer className="care-closing"><strong>Raise <i>·</i> Bond <i>·</i> Evolve</strong><span>More happy days together.</span></footer></div></section>
 }
