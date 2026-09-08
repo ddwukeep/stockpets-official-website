@@ -30,7 +30,6 @@ export default function CareSection() {
       <div className="care-inner">
         <div className="care-scene">
           <div className="care-pet-column">
-            <p className="care-note">A happy StockPet<br/>makes a brighter you.</p>
             <div className="care-pet">
               <div className="care-halo" aria-hidden="true"/>
               <img src={tslaCarePet} alt="TSLA StockPet relaxing at home"/>
