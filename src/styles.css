@@ -119,3 +119,19 @@
 .faq-closing{height:auto;max-width:none;margin:clamp(90px,10vw,150px) auto 0;padding:clamp(55px,7vw,90px) 20px 0;border-top:1px solid rgba(222,155,53,.16);display:block;text-align:center}.faq-closing strong{display:block;color:#eee4d5;font:900 clamp(25px,3.25vw,47px)/1.18 monospace;letter-spacing:-.04em;text-transform:uppercase}.faq-closing strong em{color:var(--faq-gold);font-style:normal;text-shadow:0 0 25px rgba(239,173,61,.12)}.faq-closing span{display:block;margin-top:20px;color:#756e65;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
 @media(max-width:900px){.snapshot-list{grid-template-columns:repeat(2,minmax(0,1fr))}.snapshot-card:last-child{grid-column:2}.faq-item button{grid-template-columns:48px 1fr 46px}.faq-answer-wrap p{padding-inline:70px}}
 @media(max-width:600px){.faq-inner{width:100%;padding:60px 15px 85px}.market-snapshot{margin-inline:-15px}.snapshot-list{display:flex;overflow-x:auto;gap:8px;padding:0 15px 10px;scroll-snap-type:x proximity;scrollbar-width:none}.snapshot-list::-webkit-scrollbar{display:none}.snapshot-card{flex:0 0 174px;scroll-snap-align:start}.snapshot-card:last-child{grid-column:auto}.faq-intro{margin:54px 8px 40px;text-align:left}.faq-intro h2{font-size:clamp(43px,14vw,60px);white-space:normal}.faq-list{gap:9px}.faq-item button{grid-template-columns:35px 1fr 46px;min-height:82px;padding:0 10px 0 15px}.faq-question{font-size:14px}.faq-toggle{width:40px;height:40px}.faq-answer-wrap p{padding-inline:50px 20px;font-size:12px}.faq-item.is-open .faq-answer-wrap p{padding-bottom:24px}.faq-closing{margin-top:84px;padding:60px 5px 0}.faq-closing strong{font-size:clamp(24px,7.5vw,34px)}}
+
+/* Subtle motion enhancements */
+.pet-dashboard .pet-stage>img,.care-pet img{transition:transform 360ms cubic-bezier(.2,.7,.2,1),filter 360ms ease}
+.evolution-track .evolution-stage{--card-glow:rgba(113,196,67,.12);transition:transform 360ms cubic-bezier(.2,.7,.2,1),filter 360ms ease,border-color 360ms ease}
+.evolution-track-more .evolution-stage:nth-child(1){--card-glow:rgba(226,105,151,.13)}
+.evolution-track-more .evolution-stage:nth-child(2){--card-glow:rgba(75,142,220,.13)}
+.evolution-track-more .evolution-stage:nth-child(3){--card-glow:rgba(225,133,39,.13)}
+.evolution-track-more .evolution-stage:nth-child(4){--card-glow:rgba(75,142,220,.13)}
+@keyframes journey-glow{0%,100%{box-shadow:0 18px 42px rgba(0,0,0,.34),0 0 20px var(--card-glow)}50%{box-shadow:0 18px 42px rgba(0,0,0,.34),0 0 29px var(--card-glow)}}
+@media(hover:hover) and (pointer:fine){
+  .pet-dashboard .pet-stage>img:hover{transform:translateY(-5%) translateY(-10px);filter:drop-shadow(0 28px 32px #000) drop-shadow(0 0 14px rgba(115,212,77,.2))}
+  .evolution-track .evolution-stage{animation:journey-glow 5s ease-in-out infinite}
+  .evolution-track .evolution-stage:hover{transform:translateY(-7px) scale(1.012);filter:brightness(1.045);border-color:rgba(255,183,63,.32)}
+  .care-pet img:hover{transform:translateY(-10px);filter:drop-shadow(0 32px 28px rgba(0,0,0,.72)) drop-shadow(0 0 24px rgba(220,137,25,.2))}
+}
+@media(prefers-reduced-motion:reduce){.pet-dashboard .pet-stage>img,.evolution-track .evolution-stage,.care-pet img{animation:none;transition:none}.pet-dashboard .pet-stage>img:hover,.evolution-track .evolution-stage:hover,.care-pet img:hover{transform:none}}
